@@ -1,0 +1,188 @@
+file: config.yml
+key: configHugo076
+title: Hugo 0.76 Configuration
+fields:
+
+  - key: title
+    title: Title
+    type: string
+
+  - key: baseURL
+    title: BaseURL
+    type: string
+
+  - key: buildDrafts
+    title: buildDrafts
+    type: boolean
+    default: false
+    tip: default false
+
+  - key: buildExpired
+    title: buildExpired
+    type: boolean
+    default: false
+    tip: default false
+
+  - key: buildFuture
+    title: buildFuture
+    type: boolean
+    default: false
+    tip: default false
+
+  - key: canonifyURLs
+    title: canonifyURLs
+    type: boolean
+    default: false
+    tip: default false
+
+  - key: contentDir
+    title: contentDir
+    type: string
+    default: content
+    tip: default "content"
+
+  - key: copyright
+    title: copyright
+    type: string
+    tip: default ""
+
+  - key: dataDir
+    title: dataDir
+    type: string
+    default: content
+    tip: default "data"
+
+  - key: defaultContentLanguage
+    title: defaultContentLanguage
+    type: string
+    default: "en"
+    tip: default "en"
+
+  - key: defaultContentLanguageInSubdir
+    title: defaultContentLanguageInSubdir
+    type: boolean
+    default: false
+    tip: default false
+
+  - key: disableAliases
+    title: disableAliases
+    type: boolean
+    default: false
+    tip: default false
+
+  - key: disableHugoGeneratorInject
+    title: disableHugoGeneratorInject
+    type: boolean
+    default: false
+    tip: default false
+
+
+  - key: markup
+    title: Markup
+    groupdata: true
+    type: section
+    fields:
+      - key: goldmark
+        title: Goldmark
+        groupdata: true
+        type: section
+        fields:
+
+        - key: extensions
+          title: Extensions
+          groupdata: true
+          type: section
+          fields:
+            - key: definitionList
+              type: boolean
+              title: definitionList
+              default: true
+              tip: default true
+            - key: footnote
+              title: footnote
+              type: boolean
+              default: true
+              tip: default true
+            - key: linkify
+              title: linkify
+              type: boolean
+              default: true
+              tip: default true
+            - key: linkifyProtocol
+              title: linkifyProtocol
+              type: string
+              default: https
+              tip: default "https"
+            - key: strikethrough
+              title: strikethrough
+              type: boolean
+              default: true
+              tip: default true
+            - key: table
+              title: table
+              type: boolean
+              default: true
+              tip: default true
+            - key: taskList
+              title: taskList
+              type: boolean
+              default: true
+              tip: default true
+            - key: typographer
+              title: typographer
+              type: boolean
+              default: true
+              tip: default true
+
+        - key: parser
+          title: Parser
+          groupdata: true
+          type: section
+          fields:
+            - key: attribute
+              type: section
+              title: attribute
+              groupdata: true
+              fields:
+                - key: block
+                  type: boolean
+                  title: block
+                  default: false
+                  tip: default false
+                - key: title
+                  type: boolean
+                  title: title
+                  default: true
+                  tip: default true
+            - key: autoHeadingID
+              title: autoHeadingID
+              type: boolean
+              default: true
+              tip: default true
+            - key: autoHeadingIDType
+              title: autoHeadingIDType
+              type: string
+              default: github
+              tip: default "github"
+
+        - key: renderer
+          title: Renderer
+          groupdata: true
+          type: section
+          fields:
+            - key: hardWraps
+              title: hardWraps
+              type: boolean
+              default: false
+              tip: default false
+            - key: unsafe
+              title: unsafe
+              type: boolean
+              default: false
+              tip: default false
+            - key: xhtml
+              title: xhtml
+              type: boolean
+              default: false
+              tip: default false
+

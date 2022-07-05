@@ -1,0 +1,9 @@
+---
+title: README
+file: ./README.md
+description: README for site developers
+fields:
+
+  - key: mainContent
+    title: Main content
+    type: markdown

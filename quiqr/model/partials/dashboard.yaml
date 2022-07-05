@@ -1,0 +1,10 @@
+---
+title: Dashboard Text
+description: Dashboard text for content editors
+file: ./quiqr/home/index.md
+fields:
+  - key: mainContent
+    title: Main content
+    type: markdown
+
+

@@ -1,0 +1,7 @@
+<script type="text/javascript" src="{{ .Site.BaseURL }}/js/list.min.js"></script>
+
+{{ $core := resources.Get "js/core.js" }}
+{{ $custom := resources.Get "js/custom.js" }}
+{{ $bundle := slice $custom $core | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint  }}
+
+<script type="text/javascript" src="{{ $bundle.Permalink }}"></script>

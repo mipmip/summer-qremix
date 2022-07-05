@@ -1,0 +1,30 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: Summer QRemix
+theme: summer-qremix
+params:
+  tagline: Delicious & healthy recipes
+  copyright: >-
+    © 2017-2022 [Connor Bär](https://twitter.com/connor_baer). © 2022 [Pim
+    Snel](https://github.com/mipmip). All rights reserved.
+  links:
+    - name: GitHub
+      url: https://github.com/mipmip/summer-qremix
+    - name: The Quiqr Book
+      url: https://book.quiqr.org
+  moreLinksTitle: More Themes
+  moreLinks:
+    - name: Spring
+      url: https://connor-baer.github.io/spring
+    - name: Autumn
+      url: https://connor-baer.github.io/autumn
+  color: orange
+  font: Acme
+  resources: []
+  header_image: index-large.jpeg
+  logo_image: logo.svg
+  favicon_image: favicon.png
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

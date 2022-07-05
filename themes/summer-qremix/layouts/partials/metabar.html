@@ -1,0 +1,20 @@
+<aside id="metabar" class="metabar {{ with .color }}{{ . }}{{ end }}">
+  <div class="metabar-wrapper">
+    <div class="metabar-left">
+      <a class="metabar-logo" href="/#">
+        {{ $path := printf "%s%s" "/static/images/" .context.Site.Params.logo_image }}
+        {{ readFile $path | safeHTML }}
+      </a>
+      <span class="metabar-spacer"></span>
+      <a class="metabar-title" href="{{ .context.Site.BaseURL }}{{ if eq .context.Params.ref "index" }}#" data-scroll{{ else }}"{{ end }} aria-label="Visit the homepage." title="Visit the homepage.">{{ .context.Site.Title }}</a>
+    </div>
+    <div class="metabar-right">
+      <button id="js-navOpen" class="nav-open">Menu</button>
+      <nav id="js-metabarNav" class="metabar-nav">
+        <button id="js-navClose" class="nav-close">Close</button>
+        {{ partial "navigation.html" .context }}
+      </nav>
+    </div>
+  </div>
+</aside>
+

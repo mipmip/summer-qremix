@@ -1,0 +1,78 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family={{ $.Site.Params.font }}:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body,
+.content-style .next-title a,
+.related-container h3,
+.content-style.content-recipe figcaption,
+.related-post h4,
+.meta-text,
+.footer-text,
+.footer-title,
+.content-style p.message,
+.content-style .next-post .next-header,
+.content-style cite,
+.content-style figcaption,
+.author-text p,
+.author-text,
+.list-category,
+.searchbar-button,
+.search,
+.hero-text,
+.nav-open,
+.nav-close,
+.nav-link,
+.metabar-title
+{
+
+  font-family: '{{$.Site.Params.font }}', sans-serif;
+}
+
+
+.list-category{
+  background: {{ $.Site.Params.color  }};
+}
+
+.metabar-title:hover, .metabar-title:focus {
+  color: {{ $.Site.Params.color  }};
+}
+.metabar.-white .metabar-title:hover, .metabar.-white .metabar-title:focus {
+  color: {{ $.Site.Params.color  }};
+}
+.metabar.-white .nav-link a:hover, .metabar.-white .nav-link a:focus {
+  color: {{ $.Site.Params.color  }};
+}
+.footer-text a:hover, .footer-text a:focus {
+  color: {{ $.Site.Params.color  }};
+}
+.nav-link a:hover, .nav-link a:focus {
+  color: {{ $.Site.Params.color  }};
+}
+
+.searchbar-checkbox[type=checkbox]:checked ~ .searchbar-button {
+  background: {{ $.Site.Params.color  }};
+  border-color: {{ $.Site.Params.color  }};
+}
+.searchbar-button:hover {
+  border-color: {{ $.Site.Params.color  }};
+}
+
+.form-input:focus {
+  border-color: {{ $.Site.Params.color  }};
+}
+.form-input:focus ~ .form-icon {
+  fill: {{ $.Site.Params.color  }};
+}
+
+.content-style p:not(.message) a {
+  color: {{ $.Site.Params.color  }};
+}
+.meta-svg.share-svg:hover, .meta-svg.share-svg:focus {
+  fill: {{ $.Site.Params.color  }};
+}
+
+.content-style ul a, .content-style ol a {
+  color: {{ $.Site.Params.color  }};
+}
+</style>

@@ -1,0 +1,9 @@
+---
+title: License
+file: ./LICENSE.md
+description: License of source
+fields:
+
+  - key: mainContent
+    title: Main content
+    type: markdown

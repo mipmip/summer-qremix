@@ -1,0 +1,90 @@
+---
+title: Site Config
+description: Site settings, and color and font
+file: config.yaml
+fields:
+  - key: title
+    title: Site Title
+    type: string
+    tip: Your page title. [Read more on hugo hq](https://gohugo.io)
+  - key: baseURL
+    title: Base URL
+    type: string
+
+  - key: languageCode
+    title: Language Code
+    type: string
+
+  - key: params
+    groupdata: true
+    title: Params
+    type: section
+    fields:
+
+      - key: tagline
+        title: Tagline
+        type: string
+
+      - key: copyright
+        title: Copyright Line
+        type: string
+        tip: supports markdown
+
+      - key: links
+        title: Links
+        type: accordion
+        fields:
+        - arrayTitle: true
+          key: name
+          title: Name
+          type: string
+        - key: url
+          title: Url
+          type: string
+
+
+      - key: moreLinksTitle
+        title: More Links Title
+        type: string
+
+      - key: moreLinks
+        title: More Links
+        type: accordion
+        fields:
+        - arrayTitle: true
+          key: name
+          title: Name
+          type: string
+        - key: url
+          title: Url
+          type: string
+
+      - key: "font"
+        title: "Font"
+        type: "font-picker"
+        limit: 300
+
+      - key: color
+        title: Primary Color
+        type: color
+        autoSave: true
+
+      - key: logo_image
+        buttonTitle: select logo image
+        path: /static/images
+        title: Logo Image (only SVG)
+        type: image-select
+        tip: This should be an SVG because it will be embedded
+
+      - key: header_image
+        buttonTitle: select side image
+        path: /static/images
+        title: header Image
+        type: image-select
+
+      - key: favicon_image
+        buttonTitle: select favicon image
+        path: /static/images
+        title: favicon Image
+        type: image-select
+

@@ -1,0 +1,86 @@
+- dataformat: yaml
+  description: Pages like about, etc...
+  folder: content/page/
+  itemtitle: Page
+  key: pages
+  title: Pages
+  hideIndex: true
+  includeSubdirs: true
+  extension: md
+  fields:
+    - key: title
+      title: Title
+      type: string
+    - key: ref
+      title: ref
+      type: string
+    - key: mainContent
+      title: Main content
+      type: markdown
+
+- dataformat: yaml
+  description: Recipes with instructions and ingredients
+  folder: content/recipe
+  itemtitle: Recipe
+  key: recipes
+  title: Recipes
+  hideIndex: true
+  extension: md
+  fields:
+
+
+    - key: title
+      title: Title
+      type: string
+    - key: ref
+      title: Ref
+      type: string
+    - key: image
+      title: Image
+      type: boolean
+    - key: category
+      title: Category
+      type: string
+    - key: tags
+      title: Tags
+      type: chips
+
+    - key: ingredients
+      title: Ingredients
+      type: accordion
+      fields:
+      - arrayTitle: true
+        key: name
+        title: Name
+        type: string
+      - key: unit
+        title: Unit
+        type: string
+      - key: amount
+        title: Amount
+        type: string
+
+    - key: mainContent
+      title: Main content
+      type: markdown
+
+    - key: side_image
+      buttonTitle: select side image
+      path: ./images
+      title: Side Image
+      type: image-select
+
+    - key: images
+      type: bundle-manager
+      path: ./images
+      extensions:
+        - svg
+        - png
+        - jpeg
+        - jpg
+        - gif
+      fields:
+        - key: thumb
+          title: Thumb
+          type: bundle-image-thumbnail
+

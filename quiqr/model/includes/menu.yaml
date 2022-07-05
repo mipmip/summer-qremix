@@ -1,0 +1,26 @@
+- key: Content
+  title: Content
+  menuItems:
+    - key: pages
+    - key: recipes
+
+- key: images
+  title: Images
+  menuItems:
+    - key: images
+
+- key: Settings
+  title: "Settings "
+  menuItems:
+    - key: mainConfig
+
+- key: Developer
+  title: "Developer"
+  matchRole: siteDeveloper
+  menuItems:
+    - key: dashboard
+    - key: etalage
+    - key: readme
+    - key: license
+    - key: configAdvanced
+

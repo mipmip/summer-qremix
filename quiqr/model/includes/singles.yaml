@@ -1,0 +1,23 @@
+- key: images
+  description: global images
+  _mergePartial: https://raw.githubusercontent.com/quiqr/model-partials/main/singles/global-images.yml
+
+- key: etalage
+  _mergePartial: etalage
+
+- key: readme
+  _mergePartial: readme
+
+- key: license
+  _mergePartial: license
+
+- key: dashboard
+  _mergePartial: dashboard
+
+- key: mainConfig
+  _mergePartial: config
+
+- key: configAdvanced
+  _mergePartial: https://raw.githubusercontent.com/quiqr/model-partials/main/singles/configuration-hugo-076.yml
+  file: config.yaml
+

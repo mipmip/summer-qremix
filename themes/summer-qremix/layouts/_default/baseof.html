@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+    {{/*<body class="{% if page.font %}{{ page.font }}{% else %}{{ layout.font }}{% endif %}">*/}}
+        {{- partial "header.html" . -}}
+        <div class="body-wrapper">
+        {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+        {{- partial "scripts.html" . -}}
+    </body>
+</html>

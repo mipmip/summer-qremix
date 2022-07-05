@@ -1,0 +1,34 @@
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-logo">
+      <a href="/#">
+      {{ $path := printf "%s%s" "/static/images/" .Site.Params.logo_image }}
+      {{ readFile $path | safeHTML }}
+      </a>
+    </div>
+    <div class="footer-navigation">
+      <div class="footer-links">
+        <h4 class="footer-title">{{ .Site.Title }}</h4>
+        <nav>
+          {{ partial "navigation.html" . }}
+        </nav>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-title">{{ .Site.Params.moreLinksTitle }}</h4>
+        <nav>
+          <ul class="nav">
+
+            {{ range  .Site.Params.moreLinks}}
+            <li class="nav-link">
+              <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
+            </li>
+            {{ end }}
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <h6 class="footer-text">{{ .Site.Params.copyright | markdownify }}</h6>
+  </div>
+</footer>

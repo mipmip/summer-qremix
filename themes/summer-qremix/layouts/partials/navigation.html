@@ -1,0 +1,19 @@
+<ul class="nav">
+
+  {{ range where .Site.Pages "Section" "page" }}
+
+    {{ if .Params.title }}
+    <li class="nav-link">
+      <a href="{{ .Permalink }}" aria-label="{{ .Params.title }}">{{ .Params.title }}</a>
+    </li>
+
+    {{ end }}
+  {{ end }}
+
+  {{ range .Site.Params.links}}
+  <li class="nav-link">
+    <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
+  </li>
+  {{ end }}
+</ul>
+

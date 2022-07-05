@@ -1,0 +1,115 @@
+{{ define "main" }}
+
+<div class="index{{ if .Params.image }} entry-hasBackground{{ end }}">
+  <div class="content-top">
+    {{ if .Params.image }}
+
+    <div class="hero-background" style="background-image: url('{{ .Site.BaseURL }}/images/{{ .Site.Params.header_image }}'); "></div>
+    <div class="hero-overlay"></div>
+    {{ partial "metabar.html" (dict "context" . "color" "-white") }}
+    {{ else }}
+    {{ partial "metabar.html" (dict "context" . "color" "") }}
+    {{ end }}
+
+    <header class="content hero">
+      <a id="{{ .Params.title | urlize }}"><h1 class="hero-title">{{ $.Site.Params.tagline }}</h1></a>
+    </header>
+  </div>
+
+  <div class="content" id="js-list">
+    <form class="searchbar">
+      <fieldset class="searchbar-group">
+        <label class="searchbar-search" for="js-search">
+          <input class="search form-input" id="js-search" type="search" placeholder="Search recipes, ingredients, tags..." autocomplete="off" onkeypress="return event.keyCode != 13;">
+          <svg class="search-icon form-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+          <span class="search-highlight form-highlight"></span>
+        </label>
+      </fieldset>
+      <fieldset class="searchbar-group">
+        <label for="breakfast">
+          <input class="searchbar-checkbox js-category" type="checkbox" id="breakfast" value="breakfast">
+          <span class="searchbar-button">Breakfast</span>
+        </label>
+        <label for="lunch">
+          <input class="searchbar-checkbox js-category" type="checkbox" id="lunch" value="lunch">
+          <span class="searchbar-button">Lunch</span>
+        </label>
+        <label for="dinner">
+          <input class="searchbar-checkbox js-category" type="checkbox" id="dinner" value="dinner">
+          <span class="searchbar-button">Dinner</span>
+        </label>
+        <label for="snacks">
+          <input class="searchbar-checkbox js-category" type="checkbox" id="snacks" value="snacks">
+          <span class="searchbar-button">Snacks</span>
+        </label>
+      </fieldset>
+      <fieldset class="searchbar-group">
+        <label for="twenty-minutes">
+          <input class="searchbar-checkbox js-duration" type="checkbox" id="twenty-minutes" value="20">
+          <span class="searchbar-button">20 minutes</span>
+        </label>
+      </fieldset>
+      <fieldset class="searchbar-group">
+        <label for="vegetarian">
+          <input class="searchbar-checkbox js-meat" type="checkbox" id="vegetarian" value="vegetarian">
+          <span class="searchbar-button">Vegetarian</span>
+        </label>
+        <label for="meat">
+          <input class="searchbar-checkbox js-meat" type="checkbox" id="meat" value="meat">
+          <span class="searchbar-button">Meat</span>
+        </label>
+        <label for="fish">
+          <input class="searchbar-checkbox js-meat" type="checkbox" id="fish" value="fish">
+          <span class="searchbar-button">Fish</span>
+        </label>
+      </fieldset>
+      <fieldset class="searchbar-group">
+        <label for="asian">
+          <input class="searchbar-checkbox js-origin" type="checkbox" id="asian" value="asian">
+          <span class="searchbar-button">Asian</span>
+        </label>
+        <label for="italian">
+          <input class="searchbar-checkbox js-origin" type="checkbox" id="italian" value="italian">
+          <span class="searchbar-button">Italian</span>
+        </label>
+        <label for="latin-american">
+          <input class="searchbar-checkbox js-origin" type="checkbox" id="latin-american" value="latin-american">
+          <span class="searchbar-button">Latin American</span>
+        </label>
+      </fieldset>
+    </form>
+
+
+    <ul class="list">
+
+      {{ range where .Site.Pages "Section" "==" "recipe" }}
+
+      {{ if .Params.title }}
+
+      <li class="list-recipe">
+        <article>
+          <a href="{{ .Permalink}}" title="{{ .Params.title }}">
+            <div class="list-image" style="background-image: url('{{ .Permalink }}{{ .Params.side_image }}'); "></div>
+            <div class="list-body">
+              <span class="list-category category">{{ .Params.category }}</span>
+              {{ range .Params.categories }}{{ . }}{{ end }}
+              <h3 class="list-header title">{{ .Params.title }}</h3>
+              {{ partial "meta.html" . }}
+              <span class="list-ingredients ingredients" data-ingredients="{{ range .Params.ingredients }}{{ .name }}, {{ end }}"></span>
+            </div>
+          </a>
+        </article>
+      </li>
+
+      {{ end }}
+      {{ end }}
+
+    </ul>
+
+  </div>
+</div>
+
+{{ end }}
+
