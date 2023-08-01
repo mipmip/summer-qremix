@@ -2,6 +2,7 @@
   "name": "Summer",
   "description": "Simple fresh looking recipe site, ported from Jekyll to Hugo",
   "homepage": "https://github.com/mipmip/summer-qremix",
+  "demoUrl", "https://mipmip.github.io/summer-qremix/",
   "license": "MIT",
   "licenseURL": "https://github.com/mipmip/summer-qremix/blob/main/LICENSE",
   "author": "Connor Bär (Ported by Pim Snel)",
