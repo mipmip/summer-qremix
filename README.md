@@ -9,6 +9,10 @@ Port of the Jekyll [Summer theme](https://github.com/connor-baer/summer) made by
 
 [![Summer screenshot](https://github.com/connor-baer/summer/blob/gh-pages/_images/screenshot.jpg)](https://connor-baer.github.io/summer)
 
+## Showcase
+
+- https://wearetechnative.github.io/yumyum/
+
 ## License
 
 Open sourced under the [MIT license](LICENSE.md).
